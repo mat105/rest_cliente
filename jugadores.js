@@ -2,11 +2,14 @@
 var datos = null;
 
 
+function mostrar(cod){}
+
 function crear_elemento(who){
     var li = document.createElement("li");
     var link = document.createElement("a");
     link.appendChild(document.createTextNode(who.codigo+" "+who.nombre));
     link.href = "#info";
+    link.setAttribute("onclick", "mostrar("+who.codigo+")");
     li.appendChild(link);
     
     return li;
@@ -43,6 +46,7 @@ function buscar_por(){
 
 function recargar() {
     limpiar();
+    //cargar();
     for(var px = 0; px<datos.length; px++){
         agregar_jugador(datos[px]);
     }

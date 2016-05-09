@@ -3,18 +3,14 @@
 <html>
 <head>
 <title>Listado de jugadores</title>
+<link rel="stylesheet" type="text/css" href="jugadores.css">
 <script src="jugadores.js"></script>
 </head>
 <body>
 
-<p>Listado:</p>
-
-<div id="divlista">
-<ul id="lista">
-</ul>
-</div>
-
 <div id="divbusqueda">
+<h2>Busqueda:</h2>
+    
 <form id="buscador">
 <input type="text" id="bnombre">
 <input type="button" value="Buscar" id="baceptar" onclick="buscar_por()">
@@ -22,13 +18,20 @@
 </form>
 </div>
 
+<div id="divlista">
+<h2>Listado:</h2>
+<ul id="lista">
+</ul>
+</div>
+
 <div id="info">
-<p id="inombre"> Nombre: </p>
-<p id="iclub"> Club: </p>
-<p id="iposicion"> Posicion: </p>
-<p id="icosto"> Costo: </p>
-<p id="iojeos"> Ojeos: </p>
-<ul id="ilista">
+<h2>Datos:</h2>
+<p class="info" id="inombre"> Nombre: </p>
+<p class="info" id="iclub"> Club: </p>
+<p class="info" id="iposicion"> Posicion: </p>
+<p class="info" id="icosto"> Costo: </p>
+<p class="info" id="iojeos"> Ojeos: </p>
+<ul class="info" id="ilista">
 </ul>
 </div>
 

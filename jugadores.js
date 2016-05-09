@@ -2,7 +2,27 @@
 var datos = null;
 
 
-function mostrar(cod){}
+function mostrar(cod){
+    var xhttp = new XMLHttpRequest();
+    
+    /*limpiar();*/
+    
+    xhttp.onreadystatechange = function() {
+        if( xhttp.readyState == 4 && xhttp.status == 200 ){
+            var jugas = JSON.parse(xhttp.responseText);
+
+            document.getElementById("inombre").innerHTML = "Nombre: " + jugas.nombre;
+            document.getElementById("iclub").innerHTML = "Club: " + jugas.club;
+            document.getElementById("iposicion").innerHTML = "Posicion: " + jugas.posicion;
+            document.getElementById("icosto").innerHTML = "Costo: " + jugas.costo;
+
+        }
+        
+    }
+    xhttp.open("GET", "http://localhost:5000/jugador/"+cod, true)
+    xhttp.setRequestHeader("Authorization", "Basic " + btoa("pepe:123"));
+    xhttp.send('*');
+}
 
 function crear_elemento(who){
     var li = document.createElement("li");

@@ -1,0 +1,40 @@
+div {
+    background-color: #A0A1AB;
+}
+
+#lista {
+    font-size: 20px;
+}
+
+#lista:hover {
+    background-color: #F0AF0F;;
+}
+
+.info {
+    font-size: 20px;
+    padding-left: 25px;
+    
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#divbusqueda {
+    outline-color: gray;
+    outline-style: ridge;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+#divlista {
+    outline-color: gray;
+    outline-style: ridge;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+#info {
+    outline-color: gray;
+    outline-style: ridge;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}

@@ -8,15 +8,19 @@
 
 <p>Sistema de logueo</p>
 
-<form method="post" action="/jugador/ojeo" >
+<form method="post" method="POST" action="http://localhost:5000/login">
 	<label for="usuario">Usuario</label>
 	<input type="text" id="usuario" name="usuario">
 	<br>
 	<label for="codigo">Contraseña</label>
 	<input type="password" id="codigo" name="codigo">
 	<br>
-	<input type="submit" id="mandar" value="Enviar">
+	<input type="button" id="mandar" value="Enviar" onclick="ponerCookie()">
 </form>
+
+
+<script src="logueo.js">
+</script>
 
 </body>
 </html>

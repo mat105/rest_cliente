@@ -3,6 +3,13 @@ var datos = null;
 
 
 function mostrar(cod){
+    if( getCookie("jofuser") == "" )
+    {
+        console.log("Deslogueado");
+        window.location.href = "logueo.html";
+        return;
+    }
+    
     var xhttp = new XMLHttpRequest();
     
     /*limpiar();*/
@@ -19,8 +26,10 @@ function mostrar(cod){
         }
         
     }
+    
     xhttp.open("GET", "http://localhost:5000/jugador/"+cod, true)
-    xhttp.setRequestHeader("Authorization", "Basic " + btoa("pepe:123"));
+    //xhttp.setRequestHeader("Authorization", "Basic " + btoa("pepe:123"));
+    xhttp.setRequestHeader("Authorization", "Basic " + btoa( getCookie("jofuser")+":none" ));
     
     xhttp.send('*');
 }
@@ -79,6 +88,13 @@ function cargar() {
     
     /*limpiar();*/
     
+    if( getCookie("jofuser") == "" )
+    {
+        console.log("Deslogueado");
+        window.location.href = "logueo.html";
+        return;
+    }
+    
     xhttp.onreadystatechange = function() {
         if( xhttp.readyState == 4 && xhttp.status == 200 ){
             var jugas = JSON.parse(xhttp.responseText);
@@ -93,7 +109,9 @@ function cargar() {
     }
     
     xhttp.open("GET", "http://localhost:5000/jugador/ojeo", true)
-    xhttp.setRequestHeader("Authorization", "Basic " + btoa("pepe:123"));
+    //xhttp.setRequestHeader("Authorization", "Basic " + btoa("pepe:123"));
+    xhttp.setRequestHeader("Authorization", "Basic " + btoa( getCookie("jofuser")+":none" ));
+  
     xhttp.send('*');
 }
 
